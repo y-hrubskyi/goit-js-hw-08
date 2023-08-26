@@ -8,7 +8,7 @@ formRef.addEventListener('submit', onFormSubmit);
 formRef.addEventListener('input', throttle(onFormInput, 500));
 
 const formData = {};
-const parsedData = JSON.parse(localStorage.getItem(FEEDBACK_FORM_KEY));
+const parsedData = JSON.parse(localStorage.getItem(FEEDBACK_FORM_KEY)) || {};
 for (key in parsedData) {
   formData[key] = parsedData[key];
   formRef.elements[key].value = formData[key];
